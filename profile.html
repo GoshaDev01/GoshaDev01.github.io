@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" href="/profile.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <a href="/profile.html">
+            <img id="header-logo" src="/lego-logo.jpg" alt="логотип">
+        </a>
+        <div class="burger" id="burger">
+            <img id="menuu" src="/menu.png" alt="Меню">
+        </div>
+        <nav class="nav-links" id="navLinks">
+
+            <li><a href="/index.html">Главная</a></li>
+            <li><a href="/ideas.html">Ideas <img id="ideas-logo" src="/ideas logo (1).png" alt="Ideas"></a></li>
+            <li><a href="/bakCombo.html">Наборы</a></li>
+            <li><a href="/about.html">О нас</a></li>
+
+            <span class="header-mobile-right">
+                <a id="authButton" href="/auth.html"><button id="auth">Войти</button></a>
+                <a class="hnd" href="/basket.html"><img class="button-img" src="/cart.png"
+                        alt="корзина"></a>
+                <a class="hnd" href="/liked-card.html"><img class="button-img" src="/love.png"
+                        alt="любимые"></a>
+            </span>
+
+        </nav>
+    </header>
+    <script>
+        const burger = document.getElementById("burger");
+        const nav = document.getElementById("navLinks");
+
+        burger.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+    </script>
+    <main>
+        <div class="profile-header">
+            <div class="profile-header__title">
+                <h1 id="profile-header__username">Shaydulin:</h1>
+            </div>
+            
+            <div class="profile-header__content">
+                <img id="profile-header__avatar" src="/i-am.png" alt="Фото профиля">
+                
+                <div class="card" id="orderList">
+                    <div class="card-body">
+                        <h5 class="card-title">Личная информация:</h5>
+                        <p class="card-text">Имя: ююю <br> Email: ggghghghg@gmail.com</p>
+                        <a href="#" class="btn btn-primary">изменить </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card orders-card">
+            <div class="card-body">
+                <h5 class="card-title">Список заказов</h5>
+                <div class="orders-list">
+                    <div class="order-item">
+                        <div class="order-number">№31313131</div>
+                        <div class="order-status status-paid">оплачен</div>
+                        <div class="order-price">8000 ₽</div>
+                    </div>
+                    <div class="order-item">
+                        <div class="order-number">№31313132</div>
+                        <div class="order-status status-cancelled">отменен</div>
+                        <div class="order-price">12000 ₽</div>
+                    </div>
+                    <div class="order-item">
+                        <div class="order-number">№31313133</div>
+                        <div class="order-status status-paid">оплачен</div>
+                        <div class="order-price">8000 ₽</div>
+                    </div>
+                    <div class="order-item">
+                        <div class="order-number">№31313134</div>
+                        <div class="order-status status-paid">оплачен</div>
+                        <div class="order-price">8000 ₽</div>
+                    </div>
+                    <div class="order-item">
+                        <div class="order-number">№31313135</div>
+                        <div class="order-status status-paid">оплачен</div>
+                        <div class="order-price">8000 ₽</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <a id="authButton" href="/index.html"><button id="goOut">Выйти</button></a>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+        <footer>
+            <div class="footer-container">
+                <div id="all_contact_inf">
+                    <p id="contact_inf"> Контактная информация: </p>
+                    <p id="male" class="phone_mail">
+                        <img class="photo_male_logo" id="malee" src="/male.png" alt="Иконка почты">
+                        GoshaEzhovsky@gmail.com
+                    </p>
+                    <p class="phone_mail">
+                        <img class="photo_male_logo" id="phone" src="/phone.png" alt="Иконка телефона">
+                        +7(921)557-66-21
+                    </p>
+                </div>
+                <div id="blue_footer">
+                    <div class="first-row">
+                        <a class="white-text" id="wt1" target="_blank" href="/copyright.html">Авторские права
+                            создателя сайта</a>
+                        <a class="white-text" id="wt2" target="_blank" href="/Terms_of_use.html">Условия
+                            использования</a>
+                    </div>
+                    <p class="white-text" id="wt3">Все права защищены. Используя этот сайт, вы выражаете свое согласие с
+                        Условиями использования.</p>
+                    <img id="footer-logo" src="/lego-logo.jpg" alt="логотип">
+                    <p id="year">
+                        Г.2025
+                    </p>
+                </div>
+    
+            </div>
+        </footer>
+</body>
+
+</html>

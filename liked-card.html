@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/liked-card.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adout</title>
+</head>
+
+<body>
+    <header>
+        <a href="/profile.html">
+            <img id="header-logo" src="/lego-logo.jpg" alt="логотип">
+        </a>
+        <!-- <div class="right-controls"></div>
+                <a href="/auth.html">
+                    <button id="auth">Войти</button>
+                </a>
+                <a class="hnd" href="/basket.html">
+                    <img class="button-img-mobile" src="/cart.png" alt="Корзина">
+                </a>
+                <a class="hnd" href="/liked-card.html">
+                    <img class="button-img-mobile" src="/love.png" alt="Избранное">
+                </a>
+            </div> -->
+        <div class="burger" id="burger">
+            <img id="menuu" src="/menu.png" alt="Меню">
+        </div>
+        <nav class="nav-links" id="navLinks">
+            
+            <li><a href="/index.html">Главная</a></li>
+            <li><a href="/ideas.html">Ideas <img id="ideas-logo" src="/ideas logo (1).png" alt="Ideas"></a></li>
+            <li><a href="/bakCombo.html">Наборы</a></li>
+            <li><a href="/about.html">О нас</a></li>
+            
+            <span class="header-mobile-right">
+                <a id="authButton" href="/auth.html"><button id="auth">Войти</button></a>
+                <a class="hnd" href="/basket.html"><img class="button-img" src="/cart.png" alt="корзина"></a>
+                <a class="hnd" href="/liked-card.html"><img class="button-img" src="/love.png" alt="любимые"></a>
+            </span>
+            
+        </nav>
+    </header>
+    <script>
+        const burger = document.getElementById("burger");
+        const nav = document.getElementById("navLinks");
+
+        burger.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
+
+        // Закрытие меню при клике на ссылку
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+    </script>
+
+    <main>
+        <div id="container">
+            <div id="first-container">
+                <h1>У вас нет любимых наборов </h1>
+            </div >
+            <div id="second-container">
+                <img id="saad" src="/saad-face.png" alt="грустный смайлик">
+            </div>
+        </div>
+       
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div id="all_contact_inf">
+                <p id="contact_inf"> Контактная информация: </p>
+                <p id="male" class="phone_mail">
+                    <img class="photo_male_logo" src="/male.png" alt="Иконка почты">
+                    GoshaEzhovsky@gmail.com
+                </p>
+                <p class="phone_mail">
+                    <img class="photo_male_logo" src="/phone.png" alt="Иконка телефона">
+                    +7(921)557-66-21
+                </p>
+            </div>
+            <div id="blue_footer">
+                <div class="first-row">
+                    <a class="white-text" id="wt1" target="_blank" href="/copyright.html">Авторские права создателя сайта</a>
+                    <a class="white-text" id="wt2" target="_blank" href="/Terms_of_use.html">Условия использования</a>
+                </div>
+                <p class="white-text" id="wt3">Все права защищены. Используя этот сайт, вы выражаете свое согласие с
+                    Условиями использования.</p>
+                <img id="footer-logo" src="/lego-logo.jpg" alt="логотип">
+                <p id="year">
+                    Г.2025
+                </p>
+            </div>
+        </div>    
+    </footer>
+</body>
+
+</html>

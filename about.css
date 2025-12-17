@@ -1,0 +1,586 @@
+/* Основные стили */
+body {
+    margin: 0;
+
+}
+@font-face {
+    font-family: 'gilroy';
+    src: url('/gilroy.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Хедер */
+header {
+    display: flex;
+    align-items: center;
+    padding: 12px 24px;
+    background-color: #FFD836;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+#header-logo {
+    margin-left: 8px;
+    height: 58px;
+    width: auto;
+}
+
+.header-mobile-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    gap: 130px;
+    align-items: center;
+    list-style: none;
+    margin-left: 200px;
+    margin-right: auto;
+    justify-content: center;
+}
+
+.right-controls {
+    display: flex;
+    align-items: center;
+    gap: -5px;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.hnd {
+    background-color: #FFD836;
+    border: none;
+    transition: transform 0.2s ease;
+}
+
+.hnd:hover {
+    transform: scale(1.1);
+}
+
+/* Ссылки навигации */
+.nav-links a {
+    font-size: 29px;
+    font-family: gilroy;
+    text-decoration: none;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+#ideas-logo {
+    margin-left: -12px;
+    height: 41px;
+    width: auto;
+}
+
+#auth {
+    font-size: 29px;
+    font-family: gilroy;
+    background-color: #ffff;
+    color: #000000;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: 800;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+#auth:hover {
+    background-color: #D7D7D7;
+}
+
+.button-img {
+    height: 44px;
+    width: auto;
+}
+
+/* Основной контент */
+h1 {
+    font-family: gilroy;
+    font-size: 77px;
+}
+
+#main-text {
+    margin-top: -408px;
+    font-family: gilroy;
+    font-size: 29px;
+    margin-left: 640px;
+    margin-bottom: 84px;
+}
+
+#tram {
+    margin-left: 80px;
+    margin-top: 8px;
+    height: 400px;
+    max-width: 100%;
+}
+
+/* Футер */
+.footer-container {
+    display: flex;
+    width: 100%;
+    min-height: 144px;
+}
+
+#male {
+    margin-bottom: -10px;
+}
+
+.phone_mail {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    margin-left: 24px;
+    font-family: gilroy;
+}
+
+#all_contact_inf {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 19px;
+    background-color: #FFD836;
+    font-family: gilroy;
+    min-height: 144px;
+    width: 360px;
+    flex-shrink: 0;
+}
+
+.photo_male_logo {
+    height: 38px;
+}
+
+#contact_inf {
+    margin-top: 8px;
+    margin-left: 32px;
+    font-size: 26px;
+    margin-bottom: -12px;
+}
+
+#blue_footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 144px;
+    background-color: #334195;
+    flex: 1;
+    position: relative;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.first-row {
+    font-size: 16px;
+    margin-top: 10px;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+#footer-logo {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    height: 50px;
+    width: auto;
+}
+
+.white-text {
+    font-family: gilroy;
+    color: white;
+    margin: 0;
+    text-decoration: none;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.white-text:hover {
+    text-decoration: underline;
+}
+
+#wt3 {
+    font-size: 14px;
+    margin-top: 8px;
+    text-align: center;
+    padding: 0 20px;
+    line-height: 1.3;
+    max-width: 100%;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+#year {
+    font-family: gilroy;
+    font-size: 14px;
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+}
+
+/* Медиа-запрос для 750px и меньше */
+@media (max-width: 820px) {
+    body {
+        overflow-x: hidden;
+        padding-top: 80px;
+    }
+    
+    header {
+        position: fixed;
+        padding: 10px 15px;
+        margin-top: -80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 80px;
+    }
+    
+    .burger {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+    }
+    
+    #menuu {
+        height: 51px;
+        width: auto;
+        margin-left: auto;
+        margin-right: 10px;
+    }
+    
+    .nav-links {
+        display: none;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: auto;
+        background: #FFD836;
+        padding: 20px 25px;
+        flex-direction: column;
+        gap: 5px;
+        z-index: 999;
+        margin: 0;
+        align-items: center;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .header-mobile-right {
+        gap: 10px;
+        margin-left: 0;
+        margin-right: 0;
+        justify-content: start;
+        width: 100%;
+    }
+    
+    .nav-links .header-mobile-right {
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        justify-content: start;
+        gap: 15px;
+        margin: 10px 0;
+        width: 100%;
+    }
+    
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-links li a {
+        font-size: 22px;
+        font-family: gilroy;
+        text-decoration: none;
+        color: #000000;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        transition: color 0.3s ease;
+        padding: 10px 0;
+    }
+    
+    .nav-links li a[href="ideas.html"] {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+    }
+    
+    .nav-links #ideas-logo {
+        margin-left: -15px;
+        height: 30px;
+        width: auto;
+    }
+    
+    .nav-links li a:hover {
+        text-decoration: underline;
+    }
+    
+    #auth {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        padding: 5px 12px;
+    }
+    
+    .button-img {
+        height: 35px;
+    }
+    
+    h1 {
+        font-size: 50px;
+        text-align: center;
+        margin: 20px auto;
+    }
+    
+    #main-text {
+        margin: 30px auto !important;
+        font-size: 20px !important;
+        text-align: center;
+        width: 90%;
+        max-width: 600px;
+    }
+    
+    #tram {
+        margin: 20px auto !important;
+        height: 320px;
+        width: auto;
+        max-width: 100%;
+        display: block;
+    }
+    .container, 
+    .header, 
+    .main-content,
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+    
+    /* Футер для 750px */
+    .footer-container {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    #all_contact_inf {
+        width: 100%;
+        height: auto;
+        min-width: 100%;
+        padding: 20px 0;
+        order: 1;
+        box-sizing: border-box;
+    }
+    
+    #contact_inf {
+        margin-top: 0;
+        margin-left: 20px;
+        margin-right: 20px;
+        font-size: 24px;
+        margin-bottom: 8px;
+        text-align: center;
+    }
+    
+    .phone_mail {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 12px;
+        font-size: 14px;
+        gap: 6px;
+        justify-content: center;
+    }
+    
+    .photo_male_logo {
+        height: 24px;
+    }
+    
+    #blue_footer {
+        width: 100%;
+        height: auto;
+        min-height: auto;
+        padding: 20px 15px;
+        order: 2;
+        position: relative;
+        box-sizing: border-box;
+    }
+    
+    .first-row {
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 0;
+        gap: 15px;
+        align-items: center;
+        margin-bottom: 15px;
+        flex-wrap: wrap;
+    }
+    
+    .white-text {
+        font-size: 15px;
+        padding: 0 8px;
+        text-align: center;
+        line-height: 1.4;
+        white-space: normal;
+        word-break: break-word;
+    }
+    
+    #wt3 {
+        font-size: 13px;
+        margin-top: 10px;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0 15px;
+        text-align: center;
+        line-height: 1.3;
+    }
+    
+    #year {
+        margin-right: 0;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        text-align: center;
+        width: 100%;
+        font-size: 13px;
+    }
+    
+    #footer-logo {
+        position: static;
+        margin: 15px auto 10px;
+        display: block;
+        height: 45px;
+        width: auto;
+    }
+}
+
+/* Медиа-запрос для 350px и меньше */
+@media (max-width: 350px) {
+    header {
+        padding: 8px 10px;
+        height: 70px;
+    }
+    
+    #header-logo {
+        height: 45px;
+        margin-left: 5px;
+    }
+    
+    #menuu {
+        height: 40px;
+        margin-right: 5px;
+    }
+    
+    .nav-links {
+        top: 70px;
+        padding: 15px 20px;
+    }
+    
+    .nav-links li a {
+        font-size: 18px;
+        padding: 8px 0;
+    }
+    
+    .nav-links #ideas-logo {
+        height: 24px;
+        margin-left: -10px;
+    }
+    
+    #auth {
+        font-size: 18px;
+        padding: 4px 10px;
+    }
+    
+    .button-img {
+        height: 28px;
+    }
+    
+    h1 {
+        font-size: 36px;
+        margin: 15px auto;
+        padding: 0 10px;
+    }
+    
+    #main-text {
+        font-size: 16px !important;
+        margin: 20px auto !important;
+        width: 95%;
+        line-height: 1.4;
+    }
+    
+    #tram {
+        height: 150px;
+        max-width: 300px !important;
+    }
+    
+    #contact_inf {
+        font-size: 20px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    
+    .phone_mail {
+        font-size: 12px;
+        margin-left: 15px;
+        margin-right: 15px;
+        gap: 4px;
+    }
+    
+    .photo_male_logo {
+        height: 20px;
+    }
+    
+    .first-row {
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+    
+    .white-text {
+        font-size: 13px;
+        padding: 0 6px;
+    }
+    
+    #wt3 {
+        font-size: 11px;
+        padding: 0 10px;
+        line-height: 1.3;
+    }
+    
+    #year {
+        font-size: 11px;
+        margin-top: 12px;
+        margin-bottom: 8px;
+    }
+    
+    #footer-logo {
+        height: 35px;
+        margin: 10px auto 8px;
+    }
+}

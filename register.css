@@ -1,0 +1,164 @@
+body {
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family: 'gilroy';
+    src: url('/gilroy.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+#mega-auth-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.auth-container {
+    text-align: center;
+    width: 344px;
+    height: 504px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 32px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 56px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    box-shadow: 3px 3px 10px 0 #7c7a7aa7 inset;
+}
+
+h1 {
+    letter-spacing: 2px;
+    font-size: 38px;
+    font-family: gilroy;
+    margin-bottom: 10px;
+}
+
+p {
+    font-family: gilroy;
+    margin-top: 10px;
+}
+
+.input-container {
+    margin-bottom: 8px; /* Уменьшаем отступ между группами */
+    position: relative;
+}
+
+input {
+    padding-left: 16px;
+    border: 2px solid transparent; /* Добавляем прозрачную границу */
+    font-size: 19px;
+    width: 280px;
+    height: 54px;
+    border-radius: 8px;
+    font-family: gilroy;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    margin-bottom: 0; /* Убираем нижний отступ у input */
+    box-sizing: border-box; /* Важно для сохранения размеров с границей */
+}
+
+input:hover {
+    background-color: #D9D9D9;
+}
+
+input:invalid {
+    border: 2px solid #D32C2C;
+}
+
+/* input:valid {
+    border: 2px solid #4CAF50; /* Зеленый для валидных полей 
+} */
+
+input:focus {
+    outline: none;
+    border: 2px solid #D32C2C; /* Красный при фокусе */
+}
+
+#auth {
+    padding-left: 12px;
+    padding-right: 12px;
+    color: white;
+    background-color: #D32C2C;
+    font-size: 32px;
+    border: 0cap;
+    font-family: gilroy;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#auth:hover {
+    background-color: #B71C1C;
+}
+
+#span {
+    color: #D32C2C;
+    text-decoration: none;
+}
+
+#span:hover {
+    text-decoration: underline;
+}
+
+#cross-container {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+}
+
+#cross-ph {
+    height: 94px;
+    transition: transform 0.2s;
+}
+
+#cross-ph:hover {
+    transform: scale(1.1);
+}
+
+.error-message {
+    font-family: "gilroy";
+    color: white; /* Белый текст для лучшей читаемости */
+    background-color: #D32C2C;
+    width: 280px; /* Такая же ширина как у input */
+    padding: 4px 16px; /* Отступы внутри */
+    border-radius: 0 0 8px 8px; /* Скругляем только нижние углы */
+    font-size: 14px;
+    text-align: left;
+    margin: 0 auto; /* Центрируем */
+    margin-top: -2px; /* Смещаем вверх чтобы прилегал к полю */
+    min-height: 20px; /* Минимальная высота */
+    box-sizing: border-box;
+    display: none; /* По умолчанию скрываем */
+}
+
+.error-message:not(:empty) {
+    display: block; /* Показываем только если есть текст */
+}
+
+/* Классы для JavaScript валидации */
+.input-container.invalid input {
+    /* border: 2px solid #D32C2C; */
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+
+.auth-container.register {
+    height: auto;
+    min-height: 550px;
+    padding: 20px 0;
+}

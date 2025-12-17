@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/bakCombo.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наборы</title>
+</head>
+
+<body>
+    <header>
+        <a href="/profile.html">
+            <img id="header-logo" src="/lego-logo.jpg" alt="логотип">
+        </a>
+
+        <div class="burger" id="burger">
+            <img id="menuu" src="/menu.png" alt="Меню">
+        </div>
+        <nav class="nav-links" id="navLinks">
+            
+            <li><a href="/index.html">Главная</a></li>
+            <li><a href="/ideas.html">Ideas <img id="ideas-logo" src="/ideas logo (1).png" alt="Ideas"></a></li>
+            <li><a href="/bakCombo.html">Наборы</a></li>
+            <li><a href="/about.html">О нас</a></li>
+            
+            <span class="header-mobile-right">
+                <a id="authButton" href="/auth.html"><button id="auth">Войти</button></a>
+                <a class="hnd" href="/basket.html"><img class="button-img" src="/cart.png" alt="корзина"></a>
+                <a class="hnd" href="/liked-card.html"><img class="button-img" src="/love.png" alt="любимые"></a>
+            </span>
+            
+        </nav>
+    </header>
+    <script>
+        const burger = document.getElementById("burger");
+        const nav = document.getElementById("navLinks");
+
+        burger.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+    </script>
+    
+       
+    <main>
+        <div id="container">
+            <div class="menu-burger" id="menuBurger">
+                <img src="/menu.png" alt="Меню категорий">
+                <span>Категории</span>
+            </div>
+            <nav class="categories-menu" id="categoriesMenu">
+                <div class="menu">
+                    <a href="#" data-category="постройки">Постройки</a>
+                    <a href="#" data-category="креативные">Креативные</a>
+                    <a href="#" data-category="зверюги">Зверюги</a>
+                    <a href="#" data-category="космос">Космос</a>
+                    <a href="#" data-category="все">Все наборы</a>
+                </div>
+            </nav>
+    
+            <div id="seaa">
+                <div id="search">
+                    <input type="text" id="searchInput" placeholder="Поиск...">
+                    <img id="search-img" src="/search.png" alt="иконка лупы">
+                </div>
+            </div>
+        </div>
+        <div class="cards-container">
+            <div class="card" data-category="креативные">
+                <div>
+                    <img id=card-love src="/love.png" alt="сердечко добавления в любимок">
+                </div>
+
+                <img class="card_photo" src="/scooby-doo.png" alt="фотография набора 21357">
+                <div>
+                    <h1 class="card_number">LEGO 21357</h1>
+                    <h2 class="card_name">Disney Pixar Luxo Jr.</h2>
+                    <h2 class="card_cost">5000₽</h2>
+                    <button class="card_button" id="card_button1"> Kупить</button>
+                </div>
+            </div>
+            <div class="card" id="card_twilight" data-category="постройки">
+                <div>
+                    <img id=card-love src="/love.png" alt="сердечко добавления в любимок">
+                </div>
+                <img class="card_photo" id="twilight" src="/twilight.png" alt="фотография набора 21355">
+                <div id="card_text">
+                    <h1 class="card_number">LEGO 21355</h1>
+                    <h2 class="card_name">Twilight The Cullen House</h2>
+                    <h2 class="card_cost">12000₽</h2>
+                    <button id="twilight_buttom" class="card_button"> Kупить</button>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <img id=card-love src="/love.png" alt="сердечко добавления в любимок">
+                </div>
+
+                <img class="card_photo" src="/scooby-doo.png" alt="фотография набора 21357">
+                <div>
+                    <h1 class="card_number">LEGO 21357</h1>
+                    <h2 class="card_name">Disney Pixar Luxo Jr.</h2>
+                    <h2 class="card_cost">5000₽</h2>
+                    <button class="card_button" id="card_button1"> Kупить</button>
+                </div>
+            </div>
+            <div class="card" id="card_twilight">
+                <div>
+                    <img id=card-love src="/love.png" alt="сердечко добавления в любимок">
+                </div>
+                <img class="card_photo" id="twilight" src="/twilight.png" alt="фотография набора 21355">
+                <div id="card_text">
+                    <h1 class="card_number">LEGO 21355</h1>
+                    <h2 class="card_name">Twilight The Cullen House</h2>
+                    <h2 class="card_cost">12000₽</h2>
+                    <button id="twilight_buttom" class="card_button"> Kупить</button>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <img id=card-love src="/love.png" alt="сердечко добавления в любимок">
+                </div>
+
+                <img class="card_photo" src="/scooby-doo.png" alt="фотография набора 21357">
+                <div>
+                    <h1 class="card_number">LEGO 21357</h1>
+                    <h2 class="card_name">Disney Pixar Luxo Jr.</h2>
+                    <h2 class="card_cost">5000₽</h2>
+                    <button class="card_button" id="card_button1"> Kупить</button>
+                </div>
+            </div>
+            <div class="card" id="card_twilight">
+                <div>
+                    <img id=card-love src="/love.png" alt="сердечко добавления в любимок">
+                </div>
+                <img class="card_photo" id="twilight" src="/twilight.png" alt="фотография набора 21355">
+                <div id="card_text">
+                    <h1 class="card_number">LEGO 21355</h1>
+                    <h2 class="card_name">Twilight The Cullen House</h2>
+                    <h2 class="card_cost">12000₽</h2>
+                    <button id="twilight_buttom" class="card_button"> Kупить</button>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <img id=card-love src="/love.png" alt="сердечко добавления в любимок">
+                </div>
+
+                <img class="card_photo" src="/scooby-doo.png" alt="фотография набора 21357">
+                <div>
+                    <h1 class="card_number">LEGO 21357</h1>
+                    <h2 class="card_name">Disney Pixar Luxo Jr.</h2>
+                    <h2 class="card_cost">5000₽</h2>
+                    <button class="card_button" id="card_button1"> Kупить</button>
+                </div>
+            </div>
+            <div class="card" id="card_twilight">
+                <div>
+                    <img id=card-love src="/love.png" alt="сердечко добавления в любимок">
+                </div>
+                <img class="card_photo" id="twilight" src="/twilight.png" alt="фотография набора 21355">
+                <div id="card_text">
+                    <h1 class="card_number">LEGO 21355</h1>
+                    <h2 class="card_name">Twilight The Cullen House</h2>
+                    <h2 class="card_cost">12000₽</h2>
+                    <button id="twilight_buttom" class="card_button"> Kупить</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        // Бургер-меню для категорий
+        const menuBurger = document.getElementById("menuBurger");
+        const categoriesMenu = document.getElementById("categoriesMenu");
+        
+        if (menuBurger && categoriesMenu) {
+            menuBurger.addEventListener("click", function() {
+                categoriesMenu.classList.toggle("active");
+            });
+            
+            // Закрываем меню при клике на ссылку
+            document.querySelectorAll('.menu a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    categoriesMenu.classList.remove("active");
+                });
+            });
+        }
+        
+        // Фильтрация по категориям
+        const categoryLinks = document.querySelectorAll('.menu a[data-category]');
+        
+        categoryLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const category = this.getAttribute('data-category');
+                const allCards = document.querySelectorAll('.card');
+                
+                allCards.forEach(card => {
+                    if (category === 'все') {
+                        card.style.display = 'block';
+                    } else {
+                        const cardCategory = card.getAttribute('data-category');
+                        if (cardCategory === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+        
+        // Поиск по карточкам
+        const searchInput = document.getElementById('searchInput');
+        
+        if (searchInput) {
+            searchInput.addEventListener('input', function() {
+                const searchText = this.value.toLowerCase().trim();
+                const allCards = document.querySelectorAll('.card');
+                
+                if (searchText === '') {
+                    // Если поле поиска пустое, показываем все карточки
+                    allCards.forEach(card => {
+                        card.style.display = 'block';
+                    });
+                    return;
+                }
+                
+                allCards.forEach(card => {
+                    // Получаем номер и название из карточки
+                    const number = card.querySelector('.card_number');
+                    const name = card.querySelector('.card_name');
+                    
+                    if (number && name) {
+                        const cardText = (number.textContent + ' ' + name.textContent).toLowerCase();
+                        
+                        if (cardText.includes(searchText)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        }
+    </script>
+    <footer>
+        <div class="footer-container">
+            <div id="all_contact_inf">
+                <p id="contact_inf"> Контактная информация: </p>
+                <p id="male" class="phone_mail">
+                    <img class="photo_male_logo" src="/male.png" alt="Иконка почты">
+                    GoshaEzhovsky@gmail.com
+                </p>
+                <p class="phone_mail">
+                    <img class="photo_male_logo" src="/phone.png" alt="Иконка телефона">
+                    +7(921)557-66-21
+                </p>
+            </div>
+            <div id="blue_footer">
+                <div class="first-row">
+                    <a class="white-text" id="wt1" target="_blank" href="/copyright.html">Авторские права
+                        создателя сайта</a>
+                    <a class="white-text" id="wt2" target="_blank" href="/Terms_of_use.html">Условия
+                        использования</a>
+                </div>
+                <p class="white-text" id="wt3">Все права защищены. Используя этот сайт, вы выражаете свое согласие с
+                    Условиями использования.</p>
+                <img id="footer-logo" src="/lego-logo.jpg" alt="логотип">
+                <p id="year">
+                    Г.2025
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

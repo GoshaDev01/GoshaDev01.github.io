@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина - LEGO</title>
+    <link rel="stylesheet" href="/basket.css">
+</head>
+
+<body>
+    <header>
+        <a href="/profile.html">
+            <img id="header-logo" src="/lego-logo.jpg" alt="логотип">
+        </a>
+
+        <div class="burger" id="burger">
+            <img id="menuu" src="/menu.png" alt="Меню">
+        </div>
+
+        <nav class="nav-links" id="navLinks">
+            <li><a href="/index.html">Главная</a></li>
+            <li><a href="/ideas.html">Ideas <img id="ideas-logo" src="/ideas logo (1).png" alt="Ideas"></a></li>
+            <li><a href="/bakCombo.html">Наборы</a></li>
+            <li><a href="/about.html">О нас</a></li>
+            
+            <span class="header-mobile-right">
+                <a id="authButton" href="/auth.html"><button id="auth">Войти</button></a>
+                <a class="hnd" href="/basket.html"><img class="button-img" src="/cart.png" alt="корзина"></a>
+                <a class="hnd" href="/liked-card.html"><img class="button-img" src="/love.png" alt="любимые"></a>
+            </span>
+        </nav>
+    </header>
+
+    <script>
+        const burger = document.getElementById("burger");
+        const nav = document.getElementById("navLinks");
+
+        burger.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+    </script>
+
+    <main id="container">
+        <div id="container-one">
+            <h1 id="one">№</h1>
+            <h1 id="one">Товар</h1>
+            <h1 id="two">Цена</h1>
+            <h1 id="three">Количество</h1>
+            <!-- <h1 id="four">Итог</h1> -->
+        </div>
+
+        <div id="first-product">
+            <div id="yes">
+                <p id="position-number">1
+                    <input class="checkbox" type="checkbox">
+                </p>
+            </div>
+
+            <div class="card">
+                <div>
+                    <img id="card-love" src="/love.png" alt="сердечко добавления в любимок">
+                </div>
+                <img class="card_photo" src="/scooby-doo.png" alt="фотография набора 21357">
+                <div>
+                    <h1 class="card_number">LEGO 21357</h1>
+                    <h2 class="card_name">Disney Pixar Luxo Jr.</h2>
+                </div>
+            </div>
+
+            <div id="coast">
+                <div id="yellow-cube">
+                    <p class="coast-p">5000</p>
+                </div>
+            </div>
+            <div id="quantity">
+                <p class="coast-no-y">-</p>
+                <div id="yellow-cube">
+                    <p class="coast-p">1</p>
+                </div>
+                <p class="coast-no-y">+</p>
+            </div>
+        </div>
+
+        <div class="line"></div>
+
+        <div id="first-product">
+            <div id="yes">
+                <p id="position-number">2
+                    <input class="checkbox" type="checkbox">
+                </p>
+            </div>
+
+            <div class="card" id="card_twilight">
+                <div>
+                    <img id="card-love" src="/love.png" alt="сердечко добавления в любимок">
+                </div>
+                <img class="card_photo" id="twilight" src="/twilight.png" alt="фотография набора 21355">
+                <div id="card_text">
+                    <h1 class="card_number">LEGO 21355</h1>
+                    <h2 class="card_name">Twilight The Cullen House</h2>
+                </div>
+            </div>
+
+            <div id="coast">
+                <div id="yellow-cube">
+                    <p class="coast-p">24000</p>
+                </div>
+            </div>
+            <div id="quantity">
+                <p class="coast-no-y">-</p>
+                <div id="yellow-cube">
+                    <p class="coast-p">2</p>
+                </div>
+                <p class="coast-no-y">+</p>
+            </div>
+            <!-- <div id="finaly">
+                <div id="yellow-cube">
+                    <p class="coast-p">24000</p>
+                </div>
+            </div> -->
+        </div>
+
+        <div id="prev-sum">
+            <p id="dddd">Сумма покупки:</p>
+            <p class="coast-p" id="itog">29000</p>
+        </div>
+        <div id="button">
+            <button id="button1">Купить</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div id="all_contact_inf">
+                <p id="contact_inf">Контактная информация:</p>
+                <p id="male" class="phone_mail">
+                    <img class="photo_male_logo" src="/male.png" alt="Иконка почты">
+                    GoshaEzhovsky@gmail.com
+                </p>
+                <p class="phone_mail">
+                    <img class="photo_male_logo" src="/phone.png" alt="Иконка телефона">
+                    +7(921)557-66-21
+                </p>
+            </div>
+            <div id="blue_footer">
+                <div class="first-row">
+                    <a class="white-text" id="wt1" target="_blank" href="/copyright.html">Авторские права создателя сайта</a>
+                    <a class="white-text" id="wt2" target="_blank" href="/Terms_of_use.html">Условия использования</a>
+                </div>
+                <p class="white-text" id="wt3">Все права защищены. Используя этот сайт, вы выражаете свое согласие с Условиями использования.</p>
+                <img id="footer-logo" src="/lego-logo.jpg" alt="логотип">
+                <p id="year">Г.2025</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

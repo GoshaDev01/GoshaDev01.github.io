@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/register.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+</head>
+
+<body>
+    <div id="cross-container">
+        <a id="cross" href="/index.html"><img id="cross-ph" src="/cross.png"></a>
+    </div>
+    <div id="mega-auth-container">
+        <img src="/auth-background.png" alt="Фон авторизации">
+        <div class="auth-container">
+            <form action="#" method="post" id="registerForm">
+                <h1>Регистрация</h1>
+                
+                <div class="input-container">
+                    <input type="text" placeholder="Имя" id="Name" name="Name">
+                    <div class="error-message" id="nameError"></div>
+                </div>
+                
+                <div class="input-container">
+                    <input type="text" placeholder="Email" id="Email" name="Email">
+                    <div class="error-message" id="emailError"></div>
+                </div>
+                
+                <div class="input-container">
+                    <input type="password" placeholder="Пароль" id="Password" name="Password">
+                    <div class="error-message" id="passwordError"></div>
+                </div>
+                
+                <div class="input-container">
+                    <input type="password" placeholder="Повторите пароль" id="againPassword" name="againPassword">
+                    <div class="error-message" id="confirmPasswordError"></div>
+                </div>
+                
+                <button id="auth" type="submit">Отправить</button>
+                <p>Есть аккаунт?<a href="/auth.html" id="span">Войти</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('registerForm');
+            const nameInput = document.getElementById('Name');
+            const emailInput = document.getElementById('Email');
+            const passwordInput = document.getElementById('Password');
+            const confirmPasswordInput = document.getElementById('againPassword');
+            
+
+            const nameError = document.getElementById('nameError');
+            const emailError = document.getElementById('emailError');
+            const passwordError = document.getElementById('passwordError');
+            const confirmPasswordError = document.getElementById('confirmPasswordError');
+
+
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+
+
+            function validateName() {
+                const name = nameInput.value.trim();
+                
+                if (name === '') {
+                    nameInput.classList.remove('valid');
+                    nameInput.classList.add('invalid');
+                    nameError.textContent = 'Имя не может быть пустым';
+                    return false;
+                }
+                
+                if (name.length < 2) {
+                    nameInput.classList.remove('valid');
+                    nameInput.classList.add('invalid');
+                    nameError.textContent = 'Имя должно содержать минимум 2 символа';
+                    return false;
+                }
+                
+                nameInput.classList.remove('invalid');
+                nameInput.classList.add('valid');
+                nameError.textContent = '';
+                return true;
+            }
+            function validateEmail() {
+                const email = emailInput.value.trim();
+                
+                if (email === '') {
+                    emailInput.classList.remove('valid');
+                    emailInput.classList.add('invalid');
+                    emailError.textContent = 'Email не может быть пустым';
+                    return false;
+                }
+                
+                if (!emailRegex.test(email)) {
+                    emailInput.classList.remove('valid');
+                    emailInput.classList.add('invalid');
+                    emailError.textContent = 'Введите корректный email';
+                    return false;
+                }
+                
+                emailInput.classList.remove('invalid');
+                emailInput.classList.add('valid');
+                emailError.textContent = '';
+                return true;
+            }
+            function validatePassword() {
+                const password = passwordInput.value;
+                let isValid = true;
+                let errorMessage = '';
+                
+                if (password.length < 8) {
+                    errorMessage = 'Пароль должен содержать не менее 8 символов';
+                    isValid = false;
+                } else if (!/[A-Z]/.test(password)) {
+                    errorMessage = 'Пароль должен содержать хотя бы одну заглавную букву';
+                    isValid = false;
+                } else if (!/\d/.test(password)) {
+                    errorMessage = 'Пароль должен содержать хотя бы одну цифру';
+                    isValid = false;
+                }
+                
+                if (!isValid) {
+                    passwordInput.classList.remove('valid');
+                    passwordInput.classList.add('invalid');
+                    passwordError.textContent = errorMessage;
+                    return false;
+                }
+                
+                passwordInput.classList.remove('invalid');
+                passwordInput.classList.add('valid');
+                passwordError.textContent = '';
+                return true;
+            }
+            function validateConfirmPassword() {
+                const password = passwordInput.value;
+                const confirmPassword = confirmPasswordInput.value;
+                
+                if (confirmPassword === '') {
+                    confirmPasswordInput.classList.remove('valid');
+                    confirmPasswordInput.classList.add('invalid');
+                    confirmPasswordError.textContent = 'Повторите пароль';
+                    return false;
+                }
+                
+                if (password !== confirmPassword) {
+                    confirmPasswordInput.classList.remove('valid');
+                    confirmPasswordInput.classList.add('invalid');
+                    confirmPasswordError.textContent = 'Пароли не совпадают';
+                    return false;
+                }
+                
+                confirmPasswordInput.classList.remove('invalid');
+                confirmPasswordInput.classList.add('valid');
+                confirmPasswordError.textContent = '';
+                return true;
+            }
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const isNameValid = validateName();
+                const isEmailValid = validateEmail();
+                const isPasswordValid = validatePassword();
+                const isConfirmPasswordValid = validateConfirmPassword();
+                
+                if (isNameValid && isEmailValid && isPasswordValid && isConfirmPasswordValid) {
+                    alert('Регистрация успешна!');
+                } else {
+                    if (!isNameValid) {
+                        nameInput.focus();
+                    } else if (!isEmailValid) {
+                        emailInput.focus();
+                    } else if (!isPasswordValid) {
+                        passwordInput.focus();
+                    } else if (!isConfirmPasswordValid) {
+                        confirmPasswordInput.focus();
+                    }
+                }
+            });
+            nameInput.classList.remove('valid', 'invalid');
+            emailInput.classList.remove('valid', 'invalid');
+            passwordInput.classList.remove('valid', 'invalid');
+            confirmPasswordInput.classList.remove('valid', 'invalid');
+        });
+    </script>
+</body>
+
+</html>

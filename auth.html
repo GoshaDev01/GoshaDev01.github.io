@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/auth.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth</title>
+</head>
+
+<body>
+    <div id="cross-container">
+        <a id="cross" href="/index.html"><img id="cross-ph" src="/cross.png"></a>
+    </div>
+    
+    <div id="mega-auth-container">
+        <img src="/auth-background.png" alt="Фон авторизации">
+        <div class="auth-container">
+            <form action="#" method="post" id="authForm">
+                <h1>Авторизация</h1>
+                
+                <div class="input-container">
+                    <input type="text" placeholder="Email" id="Email" name="Email">
+                    <div class="error-message" id="emailError"></div>
+                </div>
+                
+                <div class="input-container">
+                    <input type="password" placeholder="Password" id="Password" name="Password">
+                    <div class="error-message" id="passwordError"></div>
+                </div>
+                
+                <button id="auth" type="submit">Войти</button>
+                <p>Нет аккаунта?<a href="/register.html" id="span">Зарегистрируйся</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+
+
+            const form = document.getElementById('authForm');
+
+            const emailInput = document.getElementById('Email');
+            const passwordInput = document.getElementById('Password');
+
+            const emailError = document.getElementById('emailError');
+            const passwordError = document.getElementById('passwordError');
+
+
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            function validateEmail() {
+                const email = emailInput.value.trim();
+                
+                if (email === '') {
+                    emailInput.classList.remove('valid');
+                    emailInput.classList.add('invalid');
+                    emailError.textContent = 'Email не может быть пустым';
+                    return false;
+                }
+                
+                if (!emailRegex.test(email)) {
+                    emailInput.classList.remove('valid');
+                    emailInput.classList.add('invalid');
+                    emailError.textContent = 'Введите корректный email';
+                    return false;
+                }
+                
+                emailInput.classList.remove('invalid');
+                emailInput.classList.add('valid');
+                emailError.textContent = '';
+                return true;
+            }
+
+            function validatePassword() {
+                const password = passwordInput.value;
+                
+                if (password.length < 8) {
+                    passwordInput.classList.remove('valid');
+                    passwordInput.classList.add('invalid');
+                    passwordError.textContent = 'Пароль должен содержать не менее 8 символов';
+                    return false;
+                }
+                
+                passwordInput.classList.remove('invalid');
+                passwordInput.classList.add('valid');
+                passwordError.textContent = '';
+                return true;
+            }
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); 
+                
+                const isEmailValid = validateEmail();
+                const isPasswordValid = validatePassword();
+                
+                if (isEmailValid && isPasswordValid) {
+                    alert('Форма успешно отправлена!');
+                } else {
+                    if (!isEmailValid) {
+                        emailInput.focus();
+                    } else if (!isPasswordValid) {
+                        passwordInput.focus();
+                    }
+                }
+            });
+            emailInput.classList.remove('valid', 'invalid');
+            passwordInput.classList.remove('valid', 'invalid');
+        });
+    </script>
+</body>
+
+</html>
